@@ -21,23 +21,8 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
   console.log("A user connected");
 
-  socket.on("eliminar-proveedor", (eliminarProveedor) => {
-    io.emit("eliminar-proveedor", eliminarProveedor);
-  });
-  socket.on("nuevo-proveedor", (nuevoProveedor) => {
-    io.emit("nuevo-proveedor", nuevoProveedor);
-  });
-  socket.on("actualizar-proveedor", (actualizarProveedor) => {
-    io.emit("actualizar-proveedor", actualizarProveedor);
-  });
-  socket.on("nuevo-comprobante", (nuevoComprobante) => {
-    io.emit("nuevo-comprobante", nuevoComprobante);
-  });
-  socket.on("nueva-orden", (nuevaOrden) => {
-    io.emit("nueva-orden", nuevaOrden);
-  });
-  socket.on("eliminar-orden", (eliminarOrden) => {
-    io.emit("eliminar-orden", eliminarOrden);
+  socket.on("nuevo-empleado", (crearEmpleado) => {
+    io.emit("nuevo-empleado", crearEmpleado);
   });
 });
 
